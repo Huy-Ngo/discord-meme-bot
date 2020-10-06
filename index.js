@@ -30,8 +30,9 @@ client.on('message', msg => {
 
         res.on('end', () => {
             const fullResponse = JSON.parse(str);
-            const randomIndex = Math.floor(Math.random() * fullResponse.length)
-            const selectedMeme = fullResponse[randomIndex];
+            const keys = Object.keys(fullResponse);
+            const randomKey = keys[Math.floor(Math.random() * keys.length)];
+            const selectedMeme = fullResponse[randomKey];
             msg.channel.send(selectedMeme.url);
         });
     }
