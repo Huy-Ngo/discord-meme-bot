@@ -20,6 +20,21 @@ client.on('message', msg => {
             msg.channel.send(fullResponse.url);
         });
     }
+
+    /* This send a random meme from a list */
+    const sendRandomMeme = (res) => {
+        let str = '';
+        res.on('data', (chunk) => {
+            str += chunk;
+        });
+
+        res.on('end', () => {
+            const fullResponse = JSON.parse(str);
+            const randomIndex = Math.floor(Math.random() * fullResponse.length)
+            const selectedMeme = fullResponse[randomIndex];
+            msg.channel.send(selectedMeme.url);
+        });
+    }
     const message = msg.content.toLowerCase();
     if (message === 'send meme') {
         http.get({
@@ -37,50 +52,26 @@ client.on('message', msg => {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'memes/wholesomememes/new'
-        }, sendMeme)
-    } else if (message === 'send hot wholesome meme') {
-        http.get({
-            hostname: config.apiHost,
-            port: config.apiPort,
-            path: 'memes/wholesomememes/hot'
-        }, sendMeme)
+            path: 'memes/wholesomememes'
+        }, sendRandomMeme)
     } else if (message === 'send dank meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'memes/dankmemes/new'
-        }, sendMeme)
-    } else if (message === 'send hot dank meme') {
-        http.get({
-            hostname: config.apiHost,
-            port: config.apiPort,
-            path: 'memes/dankmemes/hot'
-        }, sendMeme)
+            path: 'memes/dankmemes'
+        }, sendRandomMeme)
     } else if (message === 'send anime meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'memes/goodanimemes/new'
-        }, sendMeme)
-    } else if (message === 'send hot anime meme') {
-        http.get({
-            hostname: config.apiHost,
-            port: config.apiPort,
-            path: 'memes/goodanimemes/hot'
-        }, sendMeme)
+            path: 'memes/goodanimemes'
+        }, sendRandomMeme)
     } else if (message === 'send girl with mimi') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'memes/kemonomimi/new'
-        }, sendMeme)
-    } else if (message === 'send hot girl with mimi') {
-        http.get({
-            hostname: config.apiHost,
-            port: config.apiPort,
-            path: 'memes/kemonomimi/hot'
-        }, sendMeme)
+            path: 'memes/kemonomimi'
+        }, sendRandomMeme)
     }
 });
 
