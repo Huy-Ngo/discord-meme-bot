@@ -9,13 +9,9 @@ The available commands are:
 - `send meme`: Send a random meme from new
 - `send hot meme`: Send a random meme from hot
 - `send wholesome meme`: Send a random wholesome meme from [r/wholesomememes](https://www.reddit.com/r/wholesomememes/new)
-- `send hot wholesome meme`: Send a random wholesome meme from [r/wholesomememes/hot](https://www.reddit.com/r/wholesomememes/hot)
 - `send dank meme`: Send a random dank meme from [r/dankmemes](https://www.reddit.com/r/dankmemes/new)
-- `send hot dank meme`: Send a random dank meme from [r/dankmemes/hot](https://www.reddit.com/r/dankmemes/hot)
 - `send anime meme`: Send a random anime meme from [r/goodanimemes](https://www.reddit.com/r/goodanimemes/new)
-- `send hot anime meme`: Send a random anime meme from [r/goodanimemes/hot](https://www.reddit.com/r/goodanimemes/hot)
-- `send girl with mimi`: Send a random girl with mimi from [r/kemonomimi](https://www.reddit.com/r/kemonomimi/new)
-- `send hot girl with mimi`: Send a random girl with mimi from [r/kemonomimi/hot](https://www.reddit.com/r/kemonomimi/hot)
+- `send girl with mimi`: Send a random anime girl with mimi (animal ears) from [r/kemonomimi](https://www.reddit.com/r/kemonomimi/new)
 
 # Development guide
 
