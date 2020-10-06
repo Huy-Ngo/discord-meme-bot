@@ -37,49 +37,49 @@ client.on('message', msg => {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'wholesomememes/new'
+            path: 'memes/wholesomememes/new'
         }, sendMeme)
     } else if (message === 'send hot wholesome meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'wholesomememes/hot'
+            path: 'memes/wholesomememes/hot'
         }, sendMeme)
     } else if (message === 'send dank meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'dankmemes/new'
+            path: 'memes/dankmemes/new'
         }, sendMeme)
     } else if (message === 'send hot dank meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'dankmemes/hot'
+            path: 'memes/dankmemes/hot'
         }, sendMeme)
     } else if (message === 'send anime meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'goodanimemes/new'
+            path: 'memes/goodanimemes/new'
         }, sendMeme)
     } else if (message === 'send hot anime meme') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'goodanimemes/hot'
+            path: 'memes/goodanimemes/hot'
         }, sendMeme)
     } else if (message === 'send girl with mimi') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'kemonomimi/new'
+            path: 'memes/kemonomimi/new'
         }, sendMeme)
     } else if (message === 'send hot girl with mimi') {
         http.get({
             hostname: config.apiHost,
             port: config.apiPort,
-            path: 'kemonomimi/hot'
+            path: 'memes/kemonomimi/hot'
         }, sendMeme)
     }
 });
