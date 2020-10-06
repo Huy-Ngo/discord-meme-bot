@@ -14,7 +14,7 @@ client.on('message', msg => {
         res.on('data', (chunk) => {
             str += chunk;
         });
-    
+
         res.on('end', () => {
             const fullResponse = JSON.parse(str);
             msg.channel.send(fullResponse.url);
@@ -33,8 +33,55 @@ client.on('message', msg => {
             port: config.apiPort,
             path: 'memes/hot'
         }, sendMeme)
+    } else if (message === 'send wholesome meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'wholesomememes/new'
+        }, sendMeme)
+    } else if (message === 'send hot wholesome meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'wholesomememes/hot'
+        }, sendMeme)
+    } else if (message === 'send dank meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'dankmemes/new'
+        }, sendMeme)
+    } else if (message === 'send hot dank meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'dankmemes/hot'
+        }, sendMeme)
+    } else if (message === 'send anime meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'goodanimemes/new'
+        }, sendMeme)
+    } else if (message === 'send hot anime meme') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'goodanimemes/hot'
+        }, sendMeme)
+    } else if (message === 'send girl with mimi') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'kemonomimi/new'
+        }, sendMeme)
+    } else if (message === 'send hot girl with mimi') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'kemonomimi/hot'
+        }, sendMeme)
     }
 });
 
 client.login(config.token);
-
